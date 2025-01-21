@@ -57,7 +57,7 @@ android {
         signingConfigs {
             config {
 
-                final def keystoreFile = project.file('keystore.jks')
+                final def keystoreFile = project.file('keystore2.jks')
                 final def keystoreFilePassword = 'MARKWON_KEYSTORE_FILE_PASSWORD'
                 final def keystoreAlias = 'MARKWON_KEY_ALIAS'
                 final def keystoreAliasPassword = 'MARKWON_KEY_ALIAS_PASSWORD'
