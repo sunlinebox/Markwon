@@ -1,11 +1,11 @@
 buildscript {
-    ext.kotlin_version = '1.4.10'
+    ext.kotlin_version = '1.7.21'
     repositories {
         google()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.2'
+        classpath 'com.android.tools.build:gradle:7.4.2'
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.28.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
@@ -33,11 +33,6 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-wrapper {
-    gradleVersion '6.1.1'
-    distributionType 'all'
-}
-
 if (hasProperty('local')) {
     if (!hasProperty('LOCAL_MAVEN_URL')) {
         throw new RuntimeException('Cannot publish to local maven as no such property exists: LOCAL_MAVEN_URL')
@@ -49,9 +44,9 @@ if (hasProperty('local')) {
 ext {
 
     config = [
-            'build-tools'    : '29.0.3',
-            'compile-sdk'    : 29,
-            'target-sdk'     : 29,
+            'build-tools'    : '30.0.3',
+            'compile-sdk'    : 30,
+            'target-sdk'     : 30,
             'min-sdk'        : 16,
             'push-aar-gradle': 'https://raw.githubusercontent.com/noties/gradle-mvn-push/master/gradle-mvn-push-aar.gradle'
     ]

@@ -15,7 +15,6 @@ def gitSha = { ->
 android {
 
     compileSdkVersion config['compile-sdk']
-    buildToolsVersion config['build-tools']
 
     defaultConfig {
         applicationId 'io.noties.markwon.app'
@@ -36,11 +35,6 @@ android {
         manifestPlaceholders += [
                 'deeplink_scheme': scheme
         ]
-    }
-
-    dexOptions {
-        preDexLibraries true
-        javaMaxHeapSize '5g'
     }
 
     compileOptions {
